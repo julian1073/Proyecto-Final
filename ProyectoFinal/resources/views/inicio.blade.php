@@ -1,10 +1,10 @@
-@extents('master')
+@extends('master')
 
 @section('contenido')
 
 	<h3>Citas Medicas</h3>
 
-	<form action="{{url(formulario)}}" method="POST">
+	<form action="{{url('datos')}}" method="POST">
 
 		{{csrf_field()}}
 
@@ -16,6 +16,7 @@
 		<input type="text" placeholder="Apellido" maxlength="30" id="apellido" name="apellido">
 		<br>
 
+		<label for="tipoDocumento">Seleccione su tipo de documento:</label>
 		<select name="tipoDocumento" id="tipoDocumento">
 
 			<option value="Ti">Tarjeta de identidad</option>
@@ -26,10 +27,11 @@
 		</select>
 		<br>
 
-		<label for="cedula">Ingrese su cédula:</label>
-		<input type="number" placeholder="N Cédula" min="1" max="999999999999" id="cedula" name="cedula">
+		<label for="numId">Ingrese su numero de identificación:</label>
+		<input type="number" placeholder="N Identificación" min="1" max="999999999999" id="numId" name="numId">
 		<br>
 
+		<label for="ciudad">Seleccione su ciudad de residencia:</label>
 		<select name="ciudad" id="ciudad">
 
 			<option value="bogota">Bogóta</option>
@@ -57,6 +59,7 @@
 		<input type="number" placeholder="Edad" min="0" max="250" id="edad" name="edad">
 		<br>
 
+		<label for="turno">Seleccione su tipo de turno:</label>
 		<select name="turno" id="turno">
 
 			<option value="consignacion">Consignación</option>
@@ -66,7 +69,8 @@
 		</select>
 		<br>
 
-		<select>
+		<label for="prioridad">Seleccione su nivel de prioridad:</label>
+		<select name="prioridad" id="prioridad">
 
 			<option value="embarazo">Mujer Embarazada</option>
 			<option value="mayores">Adultos Mayores</option>
@@ -81,3 +85,15 @@
 		<button type="sumbit">Enviar Datos</button>
 
 	</form>
+
+    <?php if(Session::has('matriz')):?>
+        <h1>PHP TRADICIONAL</h1>        	
+        <?php foreach (Session::get('matriz') as $array):?> 
+            <ul>
+            <?php foreach ($array as $indice => $informacion):?>
+                <li>{{$indice}} -- {{$informacion}}</li>        
+        	<?php endforeach ?>                  
+            </ul>         
+        <?php endforeach ?>   
+    <?php endif ?>             
+@stop	
