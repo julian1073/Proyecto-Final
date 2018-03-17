@@ -1,0 +1,50 @@
+*{
+	padding:0;
+	margin:0;
+}
+
+section{
+	background: rgba(0,0,0,.7);
+	padding:30px;
+}
+
+img{
+	float: left;
+	width: 9%;
+	bottom: 10px;
+	margin:1px;
+	padding: 20px;
+	padding-top: 9px;
+}
+
+header{
+	background: rgba(14,193,225,.7);
+	padding: 40px;
+
+}
+
+body{
+	background: url(Imagenes/fondo2.jpg); 
+	background-repeat: inherit;
+	background-attachment: fixed;
+	font-family: Arial, Helvetica;
+}
+
+h1{
+	color:#40F00D;
+	text-align: left;
+	text-shadow:3px 3px 0px #870604;
+	font-size: 60px;
+}
+
+h3{
+	color: #fff;
+	text-align: center;
+}
+
+footer{
+	background: rgba(151,11,70,.6);
+	color: #fff;
+	font-size: 15px;
+	padding: 20px;
+}
