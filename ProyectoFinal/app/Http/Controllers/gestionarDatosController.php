@@ -52,18 +52,18 @@ class gestionarDatosController extends Controller
 
     		);
     		Session::put('matriz', $matriz);
-    		echo "Se creo la variable de session";
 
 
     	}
-
     	//dd($request->session()->get('matriz'));
-    	$datos = [
+    	
+        
+        $datos = [
     		'usuarios' => $request->session()->get('matriz')
     	];
 
     	
 
-    	return view('inicio', $datos);
+    	return view('mostrarPacientes', $datos);
     }
 }

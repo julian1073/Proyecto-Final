@@ -8,7 +8,7 @@
 	<div class="container">
 	<form action="{{url('datos')}}" method="POST" class="form-control">
 
-	<div class="form-group">
+		<div class="form-group">
 			<label for="nombre" class="control-label col-md-4">Ingrese su nombre:</label>
 			<div class="col-md-10">		
 				<input type="text" class="form-control" placeholder="Nombre" maxlength="30" id="nombre" name="nombre">
@@ -111,23 +111,10 @@
 	</form>
 	</div>
     
-    <?php if(Session::has('matriz')):?> 
-        <h1>PHP TRADICIONAL</h1>           
-        <?php foreach (Session::get('matriz') as $array):?>  
-            <ul> 
-            <?php foreach ($array as $indice => $informacion):?> 
-                <li>{{$indice}} -- {{$informacion}}</li>         
-          <?php endforeach ?>                   
-            <a href="Atender">Atender</a>
-            </ul>          
-        <?php endforeach ?>
-        
-    <?php endif ?>      
-
-<footer>
-			<div class="container"><!--Container fluid- Abarca toda la pantalla -->
-				<h4>Julián Vásquez Corredor - Estudiante de ingeniería de sistemas - Universidad de Cundinamarca</h4>
-			</div>
-</footer>
+	<footer>
+		<div class="container"><!--Container fluid- Abarca toda la pantalla -->
+			<h4>Julián Vásquez Corredor - Estudiante de ingeniería de sistemas - Universidad de Cundinamarca</h4>
+		</div>
+	</footer>
 
 @stop	

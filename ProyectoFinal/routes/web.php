@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::post('datos', 'gestionarDatosController@gestionarDatos');
+
 Route::get('Atender', function(){
 	return view('atenderUsuarios');
 });
